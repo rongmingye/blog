@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发布日记</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<script src="js/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="css/publicDiary.css">
+</head>
+<body>
+	<div class="container">
+		<div class='top'>
+			<h3>发布个人随笔</h3>
+			<ul class="public clearfix">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="manage.html">文章管理</a></li>
+				<li><a href="publicArticle.html">发布文章</a></li>
+				<li><a href="publicDiary.html">发布日记</a></li>
+			</ul>
+		</div>
+
+		<div class='main'>
+			<form action="/publicDiary_post" method="POST" 
+			 	onsubmit="return checkForm()" name="myForm">
+			 	<p id="tip"></p>
+				<p>
+					<label for="">内容：</label>
+					<textarea name="content" cols="80" rows="25" id="content"></textarea>
+				</p>
+				<p id="submit-line">
+					<input type="submit" value="提交" id="submit">
+					<input type="button" value="取消" onclick="javascript:history.go(-1);">
+				</p>
+			</form>
+		</div>
+		<div  class="foot">
+	       <p>design by: 铭业</p>	
+	    </div>
+	</div>
+
+<script>
+	function checkForm(){
+		$("#content").val() = $("#content").val().replace(/ /g, "&nbsp").replace(/\r\n/g, "<br/>");
+
+		if($('#content').val() == ''){ $('#tip').html("请输入内容"); return false }
+		else{return true};
+	}
+</script>
+</body>
+</html>

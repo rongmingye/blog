@@ -1,0 +1,116 @@
+
+/* pc板的侧边*/
+@media only screen and (min-width: 768px){
+
+.main-side{
+	/*width: 27%;*/
+	height: 1000px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.side-tip{
+   height: 80px;
+}
+.side-tip img{
+   width: 30%;
+   height: 80px;
+}
+.side-tip > .f-right{
+   width: 65%;
+   height: 80px;
+}
+
+.side-article-type{
+	height: 150px;
+	margin-top: 10px;
+}
+.side-article-type h3{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ddd;
+}
+.side-article-type ul{
+	margin-top: 10px;
+}
+.side-article-type li{
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.side-article-type li a:hover{
+	color: #f60;
+}
+
+.side-article-type .type-num{
+	margin-left: 20px;
+	color: #999;
+}
+
+}
+
+
+
+/* 手机版的侧边*/
+@media only screen and (max-width: 768px){
+
+.main-side{
+	width: 29%;
+	height: 1000px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.main-side > div{
+	padding: 5px;
+}
+.side-tip{
+	width: 100%;
+    height: 200px;
+}
+.side-tip > div{
+   width: 100%;
+   height: 80px;
+}
+.side-tip img{
+    width: 100%;
+    height: 80px;
+}
+.side-tip .f-right{
+	float: none;
+}
+.side-tip .f-right p span{
+   font-size: 16px;
+   font-weight: bolder;
+}
+
+
+.side-article-type{
+	height: 150px;
+	margin-top: 10px;
+}
+.side-article-type h3{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ddd;
+}
+.side-article-type ul{
+	margin-top: 10px;
+}
+.side-article-type li{
+    line-height: 20px;
+    cursor: pointer;
+}
+.side-article-type li a:hover{
+	color: #f60;
+}
+.side-article-type li strong{
+   font-weight: normal;
+}
+
+.side-article-type .type-num{
+	margin-left: 20px;
+	color: #999;
+}
+
+}

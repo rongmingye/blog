@@ -1,0 +1,44 @@
+css常用技巧
+
+1、水平居中
+	a、需要居中的元素设置display: inline-block/inline; 其父元素text-align:center;
+	b、块元素设置 margin: 0 auto;
+
+2、垂直居中
+	a、height 和 line-height设为一样高
+	c、需要对齐的元素的其中一个设置vertical-align: center;
+
+3、使用css复位: 可以使得不同浏览器保持一样的风格
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+4、清除浮动
+	a
+		.clearfix{
+			zoom: 1;
+		}
+		.clearfix:after{
+			clear: both;
+			content: '';
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+		}
+	b 在浮动元素的父元素设好固定高度
+
+5、css命名规则
+	a、书写顺序：
+		1、位置：position top left display float
+		2、大小：width height margin padding
+		3、文字：text-align font line-height color letter-spacing
+		4、背景：background border
+		5、其他：transition animation
+	b、css属性可以缩写 padding: 5px 10px 15px 20px;
+	c、0px尽量用0代替；0.5小数可以省略前面的0，直接写成.5; 16进制代码颜色可以缩写；
+	d、不建议用下划线"_"用做选择器连字符，建议用"-",这样可以少打一次shift,而且可以区分开js变量名
+	e、选择器不随意用id, id在js中唯一, 应按需求用id。样式选择器尽量用class
+	f、选择器命名尽量简写，但前提是让别人看懂你的命名才简写喔
+

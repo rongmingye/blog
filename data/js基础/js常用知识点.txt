@@ -1,0 +1,235 @@
+js常用知识点
+
+操作
+    函数会先解析变量
+    == 值是否相等
+    === 类型是否相等
+    new操作符，创建新的空对象，this指向该对象
+////////////////////
+
+this
+	  this 指当前元素
+	  this.id 当前元素的id属性
+	  this.index 当前元素的位置 
+	  lis[i].index=i; lis[this.index].className=""current;
+	  this.innerHTML 当前元素的内容
+
+预定义函数
+    parseInt() ：解析字符串且首个字符为数字，返回整数，遇到非数字立即停止解析，第一数字都不能解析返回NaN 
+    parseFloat()： 解析字符串且首个字符为数字，返回一个浮点数
+    eval()：将字符串当脚本代码来计算，并返回计算结果
+    isNaN(): 检查是不是非数字 true非数字/false数字
+
+dom
+    object.getElementById(); 通过id名获取元素
+    object.getElemenstByTagName();  通过标签名获取元素
+    getAttribute(""); 得到属性 setAttribute("",value ); 修改属性
+    createElement(""); 创建新元素
+    appendChild();   父元素插入子元素到末尾
+    .className  添加类(注意类不要重复或删除错了)
+    .createTextRange() 创建文本节点
+
+    nodeName tagName 返回大写标签名
+    兄弟节点返回元素节点，属性节点，空节点。所以查看相应节点类型nodeType
+    添加类 先将类名用spilt(" ")转为数组 再push("新类名")，然后将数组用join(" ")变为字符串;
+    删除指定类 obj.replace(/oldclass/,"newclass")
+    查询上下子节点或子元素要注意 nodeType=1 是元素
+    同一个元素，后面添加的class样式 覆盖 前面class的样式
+    .className = ""; 清除类名
+   
+
+Style
+    (IE)obj.currentStyle[attr]/(FF)getComputedStyle(元素,为元素null)[attr] 读取元素的最终的样式属性 
+    elem.style[attr] 元素的样式属性
+    elem.style.left/top/display/backgroundColor/border  设置元素的样式 可读写
+
+    style.cssText代替的是元素style属性中的内容，替代被改的属性
+    js的style属性 , 可以用应用相应的js方法 removeAttribute("border")
+    style[attr]=value
+
+Array方法： 
+    .length  ：数组长度
+	  join() : 将数组变成字符串
+	  shift()/unshift() : 删除/添加第一项
+  	pop()/push() : 删除/添加最后一项
+  	splice() : 替换/指定位置删除
+  	concat() : 数组拼接
+  	sort() : 排序
+	
+
+	  栈    push()/pop() 后进先出
+    队列  push()/shift() 先进先出
+    数组返回成一串字符串，以空格隔开 join(" ")
+
+String方法：
+  	split() ：将字符串变成数组
+  	replace() ：替换，可以用到正则表达式
+  	match(regexp) 字符串检索
+  	.toString() 返回字符串
+
+Regexp
+    . 查找单个字符; .+查找多个字符; (.+)\| 匹配|前面(.+); \|(.+) 匹配|后面的(.+); \转义字符，用来匹配 
+    | 两项之间选择一个 要匹配|，使用\|
+    可以匹配的特别字符: \*(0/n) \.(换行符之外的任何字符) \?(0/1) \+(1/n) \$(结尾位置) \^(开始位置) \[ \] \( \) \{ \} \|(选择) \  
+    .replace(/^(\d)$/,"0$1");  /^(\d)$/ 同一个数字开头并结束; $1返回第一个括号里的正则的数据
+
+function 
+    运用函数,利用参数运算,调用参数
+    return false/true返回函数，不再执行当前函数下面的语句，但要注意函数执行的结果状态，需不需要再改变点击   document向下捕获元素,读取第一吻合元素，可以return false阻止继续向下查找吻合元素向上冒泡  也可以用return false, 阻止向上冒泡
+
+    改变函数内部this指针的指向函数
+		call()  第一个参数对象
+		apply() 第一个参数对象 第二个参数数组
+		bind()  第一个参数对象  var bar = fn.bind(obj), fn函数的this指向obj对象
+		         bind函数返回新的函数，这个函数内的this指针指向obj对象。
+
+事件
+    object.onclick = function(){ } 单击
+
+    事件类型 onclick/onmouseover/onmouseout/onmousedown/onmouseup/onmousemove 
+    onkeyup = "this.value=this.value.replace(/[^\d]/g,'')" //当键盘弹起时，将非数字的字符替换为空
+
+    事件绑定 addEventListener(event,function,false冒泡/true捕获) / attachEvent(event,function) 对象事件绑定,添加事件到对象，会覆盖onclick 
+    removeEventListener(event,function,false冒泡/true捕获) / detachEvent(event,function) 对象事件解绑 
+    
+    浏览器一般采用事件冒泡,从里到外一直到document，  
+    (event||window.event).cancelBubble=true/false 取消冒泡
+
+    event.clientX:水平坐标 event.clientY:垂直坐标  鼠标位置
+    document.keydown/keyup
+    event.keyCode 按键的Ascll键码
+    event.ctrlKey/altKey/shiftKey 按下并保持返回true/false
+
+  	oncontextmenu="return false"  鼠标右键 返回取消             
+  	onselectstart="return false"  禁止选中网页上的内容 
+  	oncopy="return false"         防复制用户在网页上选中的内容 
+
+事件绑定三种方式
+    在dom中 <input type="button" value="click me" onclick="hello()">
+
+    在js代码中 document.getElementById("btn").onclick = function(){alert("hello world!");}
+
+    使用事件监听 element.addEventListener("click", function, useCapture)
+             优点：可以绑定多个事件(多个onclick),常规的事件绑定只执行最后绑定的事件。
+
+ 事件委托
+    利用冒泡原理和事件监听把事件加到父元素，然后触发祖先元素上，触发执行结果.
+    触发后向下捕获event.target
+    ps1:
+    var item = document.getElementById("item");
+    document.addEventListener("click",function(event){
+          if(event.target == item){ alert("item.innerHTML")}  
+    };
+    //if(event.target.nodeName == "li"){ alert("event.target.innerHTML")}
+
+    ps2:
+    document.addEventListener("click",function(event){
+      var target = event.target;
+      if(target.nodeName == "LI"){
+          alert(target.innerHTML);
+      }
+    });
+
+Form事件
+  	onchange  当改变输入控件值改变时触发 常用于input select text textarea 
+  	onblur    失去焦点时触发
+  	onfocus   获得焦点时触发  获取焦点时触发，打开浏览器也选一次捕获焦点
+  	onkeydown 当按键按下触发
+  	onselect  被选中时触发
+  	form return false/true 不能提交 / 提交 , 提交后自动刷新页面(return fasle阻止刷新，但不能提交表单，很尴尬)
+  	checkbox.checked; checked属性就是用来表示是否选中的,boolean值 
+
+Bom 
+    offsetWidth/offsetHeight 元素宽度/高度  //只读 offsetWidth = width+padding+border
+    offsetLeft/offsetTop 元素位置，相对父元素 只是数字，style.left/top包括"px"
+
+    clientWidth/clientHeight 元素内容可视区 clientWidth=width+padding clientHeight=height+padding 
+    setInterval(function,mm)/clearInterval(timer)
+
+    obj.select();  对象选中
+    执行浏览器复制命令 document.execCommand("copy") , 复制文档选中内容
+    obj.execCommand("copy"); 复制对象内容
+
+    document.getSelection()  window.getSelection().toString()  返回选中的的内容 Selection用户选择的文本范围
+
+
+操作符
+    && 运算符 条件 && 内容  = if(条件) 内容;  i>6 && clearInterval(timer);
+    三元运算符 条件?true内容:false内容;
+               object.style.display= object.style.display== "none" ? "block":"none ;
+               val.innerHTML = btns[0].checked?"全不选":"全选"; 
+    typeof 运算符，查看数据类型  typeof obj 返回 number/string/object
+
+
+ajax
+    var xhr = new XMLHttpRequest();  //声明请求对象 
+	 	var url=".php";  //后台地址
+	 	xhr.open("POST", url, true);  //get/post请求方式，url地址, true异步/false同步
+	 	xhr.setRequestHeader("Content-type", "application/json;charset=utf-8"); 
+    //post请求头 application/josn(x-www-form-urlencoded类型: name=""&id="")
+    var data = {"username":"","id":""};
+	 	xhr.send(data); //发送数据
+	  //xhr处理事件,异步，监听事件
+	 	xhr.onreadystatechange = function() {
+	 	    if(xhr.readyState == 4){  
+          if(xhr.status == 200) { //readyState:ajax状态码 status:http请求状态码	 
+	 	        var odata = JSON.parse(xhr.responseText);   //获取后台传递过来的字符串并转换为json
+	          //返回json数据,js操作json数据
+          }else{
+           alert("发生错误"+xhr.status);
+          }
+        }
+    }; //监听结束       
+ 
+    $.ajax({
+      type: "POST",
+      url: "后台地址",
+      dataType: "json",
+      data:{ useranme:"", id:""}, //data: 发送的数据
+      success: function(data){ //data: 后台返回的数据
+         alert(data.msg);
+      }
+      error: function(jqXHR){  //jqXHR.readyState/status/statusText/responseText
+         alert(jqXHR.responseText); 
+      }
+    });
+ajax readyStatus 五种状态码 XMLHTTP请求的当前状态
+  	0 － （未初始化）还没有调用send()方法 
+  	1 － （载入）已调用send()方法，正在发送请求 
+  	2 － （载入完成）send()方法执行完成，已经接收到全部响应内容 
+  	3 － （交互）正在解析响应内容 
+  	4 － （完成）响应内容解析完成，可以在客户端调用了 
+
+http  status 状态码
+	  常见的http状态码
+  	  HTTP: Status 200 – 服务器成功返回网页
+  	  HTTP: Status 404 – 请求的网页不存在
+  	  HTTP: Status 503 – 服务不可用
+
+http协议
+    请求行 消息报头 响应正文
+
+    请求方式 get post 
+    get提交数据，数据消息会附在url上
+
+    Web客户端如何从Web服务器请求Web页面
+    HTTP协议采用了请求/响应模型
+
+    HTTP之请求消息Request
+    客户端发送一个HTTP请求到服务器的请求消息包括以下格式：
+    请求行（request line）、请求头部（header）、空行和请求数据四个部分组成。
+
+    HTTP之响应消息Response
+    一般情况下，服务器接收并处理客户端发过来的请求后会返回一个HTTP的响应消息。
+    HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。
+   
+
+事件机制
+    冒泡事件：从目标元素一直向上传递到document;
+    捕获事件：从document向下传递到目标元素
+
+闭包：
+    一个函数可以访问外部函数变量；避免了垃圾回收，变量不被清除
+    传参 function(j)(i); i是外部变量，把值传到形式参数j
+
+

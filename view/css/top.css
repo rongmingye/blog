@@ -1,0 +1,243 @@
+/* pc版的头部 */
+@media only screen and (min-width: 768px){
+
+/* top 顶部 */
+.top{
+	position: relative;
+	height: 130px;
+}
+
+.greet{
+	position: relative;
+	z-index: 2;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 5px;
+
+	font-size: 16px;
+	color: #fff;
+}
+.greet .f-left{
+	margin-left: 20px;
+	text-align: left;
+}
+.greet .f-right{
+	margin-right: 20px;
+	text-align: right;
+}
+#loading{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	width: 0;
+	height: 25px;
+	background-color: #f60;
+}
+
+/* top-logo 行*/
+.top-logo{
+	position: relative;
+	height: 85px;
+	border-radius: 10px;
+	background-color: #ffffcb;
+}
+
+.top-logo .top-logo-left{
+	height: 65px;
+	padding: 10px;
+
+	font-size: 30px;
+	letter-spacing: 5px;
+	text-align: center;
+}
+.top-logo-left .logo-name1{
+    color: #1d9387;
+}
+.top-logo-left .logo-name2{
+	color: #713394;
+}
+
+.top-logo .top-logo-right{
+	position: relative;
+	height: 65px;
+	padding: 10px;
+}
+.top-logo-right .content{
+   position: absolute;
+   left: 0;
+   bottom: 10px;
+   width: 50%;
+
+   color: #666;
+   letter-spacing: 3px;
+}
+.top-logo-right .saying{
+	font-size: 16px;
+}
+.top-logo-right .author{
+    text-align: right;
+}
+ .top-logo-right .author strong{
+    color: #1d9387;
+}
+.top-logo-right img{
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+/* top-nav 导航 */
+.top-nav{
+	position: relative;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+.top-nav ul{
+	width: 100%;
+	height: 40px;
+	background: #66cdcc;
+}
+.top-nav ul li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+
+	padding: 0 20px;
+	margin-right: 5px;
+}
+.top-nav ul li:hover{
+   background-color: #f05694;
+}
+.top-nav ul li.liActive{
+	background-color: #f05694;
+}
+.top-nav ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+} 
+
+#audio{
+	display: none;
+}
+
+}
+
+
+
+/* 手机的头部 */
+@media only screen and (max-width: 768px){
+
+/* top 顶部 */
+.top{
+	width: 100%;
+	height: 130px;
+}
+
+/* top-logo 行*/
+.top-logo{
+	width: 100%;
+	height: 85px;
+	border-radius: 10px;
+	background-color: #ffffcb;
+}
+.top-logo .top-logo-left{
+	float: none;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	padding-left: 20px;
+
+	font-size: 20px;
+	text-align: left;
+	letter-spacing: 5px;
+}
+.top-logo-left .logo-name1{
+    color: #1d9387;
+}
+.top-logo-left .logo-name2{
+	color: #713394;
+}
+
+.top-logo .top-logo-right{
+	float: none;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 45px;
+
+	text-align: left;
+}
+.top-logo-right .content{
+   position: absolute;
+   right: 20px;
+   bottom: 0;
+   width: 50%;
+
+   color: #666;
+   letter-spacing: 3px;
+}
+.top-logo-right .saying{
+    font-size: 16px;
+}
+.top-logo-right .author{
+    text-align: right;
+}
+.top-logo-right  strong{
+    color: #1d9387;
+}
+.top-logo-right img{
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+
+/* top-nav 导航 */
+.top-nav{
+	width: 100%;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+.top-nav ul{
+	width: 100%;
+	height: 40px;
+	background: #66cdcc;
+	padding-left: 0;
+}
+.top-nav ul li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+
+	padding: 0 5px;
+	margin-right: 5px;
+}
+.top-nav ul li:nth-child(1){
+	padding: 0 10px;
+}
+.top-nav ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.top-nav ul li:hover{
+   background-color: #f05694;
+}
+.top-nav ul li.liActive{
+	background-color: #f05694;
+}
+#audio{
+	display: none;
+}
+#video{
+	display: none;
+}
+
+}

@@ -1,0 +1,105 @@
+window.location
+	window.location.href; 设置或获取url 为字符串
+			ps: alert(window.location.href); 则输出：http://localhost:8086/topic/index?topicId=361
+
+	window.location.search; 设置或获取href属性的问号后面部分
+			ps: alert(window.location.search); 则输出：?topicId=361
+
+	window.location.pathname; 设置或获取对象指定的文件名或路径 (问好前面, 端口后面)
+			ps: http://localhost:8086/topic/index?topicId=361
+				alert(window.location.pathname); 则输出：/topic/index
+
+	window.location.port; 设置或获取与 URL 关联的端口号码。
+			ps: alert(window.location.port); 则输出：8086
+
+弹出框 
+	alert(); 警告框 
+	confirm();  确认框 返回true/false ps: confirm("确定删除吗");
+	prompt(); 提示框 返回用户输入的值 ps: prompt("文本", "默认值"); 
+						确定返回值，取消返回null
+
+html 加载顺序
+	1 先解析head, 下载引用文件
+		 里面碰到<script>标签, 浏览器暂停解析, 会交给js引擎，然后渲染
+	2 加载body, 
+	3 
+		1) <script> 写在 body靠后比较好， 因为 js会操body元素
+		2) window.onload{}; / $(document).ready();  等页面的所有内容加载完在执行
+
+////3.16/////
+	写好注释，类名要有意义
+
+	做好笔记和bug的记录，笔记的目录要规范
+		当前项目的，在该项目写在一个txt文档里
+		总结，把项目里的笔记整合在，总笔记的目录里
+
+	每天把要写的先做一个笔记概叙(写在项目的txt文档)
+
+	总结今天的学习，提出下一次的学习
+
+	项目txt1的笔记文档
+		1 日期
+		2 准备要做的事项
+		3 笔记和bug
+
+	项目txt2的笔记文档
+		整合笔记和bug
+
+////3.25////
+css 布局全部改成响应式
+
+响应式布局：响应应不同的屏幕
+			每个html页面加viewport
+			少于768px 即移动端的 max-width=768px的另外指明类的样式
+			字体大小 rem: 先设置html的font的大小，都相对于html ps: html:10px, p:1.2rem(即12px)
+
+			@media only screen and (max-width: 768px){
+				
+			}
+	
+自适应布局：网格布局,宽度用百分比
+			每一行分成12列
+			分清每个模块的要多少列
+
+复位
+	*{padding:0; margin:0; box-sizing: border-box;}
+
+类重用 
+	.f-left{ float: left; }
+	.-right{ float: right; }
+	.clearfix{ zoom: 1; }
+		.clearfix:after{
+		   display: block;
+		   clear: both;
+		   content: "";
+		   height: 0;
+		}
+	a{ text-decoration: none; }
+	li{ list-style: none; }
+
+多媒体
+	<audio>
+		<audio id="audio" controls autoplay>
+			<source src="img/告白气球.mp3"/>
+		</audio>
+
+	<video>
+		<video id="video" width="360" height="280" controls>
+		    <source src="img/player.mp4" type='video/mp4; codecs="H.264,ACC" '>
+			<source src="img/player.webm" type='video/webm;codecs="vp8,vorbis" '>
+		</video>
+
+技巧
+	1 媒体查询 @media only screen and (max-width: 768px){ }
+ 	2 基本框架用行列栅格系统，细节上宽度用百分比% .row .col-md-1
+ 	3 标题图标 <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
+ 	4 字符串替换，遍历数据 replace() unshift() push()
+ 	5 var host = "192.168.1.183:4001", 字符串拼接url,改ip地址比较快
+ 	6 <audio><video>
+ 	7 window.location
+
+
+
+
+
+

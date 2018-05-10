@@ -1,0 +1,110 @@
+*{padding: 0; margin: 0;}
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+}
+.f-left{ float: left; }
+.f-right{ float: right; }
+.clearfix{ zoom: 1; }
+.clearfix:after{
+	clear: both;
+	display: block; 
+	height: 0;
+	line-height: 0;
+	content: '';
+    visibility: hidden;
+}
+
+ul, li{list-style: none;}
+a{color: #000; text-decoration: none;}
+a:hover{ color: #f60;}
+
+
+body{
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*头部*/
+.top{
+	position: relative;
+	width: 100%;
+	height: 100px;
+
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: #f90;
+}
+.top .public{
+	position: absolute;
+	right: 50px;
+	bottom: 10px;
+}
+.top .public li{
+	float: left;
+	padding: 0 10px;
+}
+
+/*主内容*/
+.main{
+	width: 100%;
+	height: 480px;
+
+	margin-top: 10px;
+	overflow: auto;
+}
+.main .side{
+	width: 14%;
+	height: 480px;
+	background-color: #999;
+
+	overflow: auto;
+}
+.main .side li{
+    cursor: pointer;
+    box-sizing: border-box;
+	padding: 5px 10px;
+}
+
+.main .side li.liActive{
+	color: #fff;
+	background-color: #f90;
+}
+.main .content{
+	width: 86%;
+	height: 480px;
+	background-color: #ddd;
+
+	box-sizing: border-box;
+	padding: 10px;
+	overflow: auto;
+}
+.main .content span{
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+}
+.article-modify, .article-del, .diary-modify, .diary-del, .board-del{
+	color: #f00;
+	cursor: pointer;
+}
+
+/*脚部*/
+.foot{
+	width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    border: 1px solid #999;
+    border-radius: 10px;
+
+    background-color: #66cdcc;
+    text-align: center;
+}

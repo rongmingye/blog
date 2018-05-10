@@ -1,0 +1,38 @@
+.main-content{
+    height: 1000px;
+    border: 1px solid #999;
+    padding: 0;
+}
+.main-content > h3{
+	height: 40px;
+	line-height: 40px;
+	background-color: #3499cd;
+	color: #fff;
+	text-align: center;
+}
+.main-content div{
+	padding: 10px;
+	position: relative;
+}
+.main-content div h3{
+	color: #3499cd;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+}
+.main-content .bloger img{
+	position: absolute;
+	right: 20px;
+}
+.main-content div p{
+ 	line-height: 25px;
+}
+.main-content .relative img{
+	vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px){
+	#logoPic{
+		display: none;
+	}
+}

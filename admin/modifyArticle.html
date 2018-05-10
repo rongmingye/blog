@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发布文章</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<script src="js/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="css/modifyArticle.css">
+</head>
+<body>
+	<div class="container">
+	
+		<div class='top'>
+			<h3>发布文章</h3>
+			<ul class="public clearfix">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="manage.html">文章管理</a></li>
+				<li><a href="publicArticle.html">发布文章</a></li>
+				<li><a href="publicDiary.html">发布日记</a></li>
+			</ul>
+		</div>
+
+		<div class='main'>
+			<form action="/update_article_success" method="POST" 
+			 	onsubmit="return checkForm()" name="myForm">
+			 	<p id="tip"></p>
+				<p><label for="">标题：</label><input type="text" id="title" name="title"></p>
+				<p><label for="">文章id：</label><input type="text" id="id" name="id"></p>
+				<p><label for="">作者：</label><input type="text" id="author" name="author"
+					placeholder = "O叶"></p>	
+				<p><label for="">文章类型：</label><input type="text" id="type" name="type"></p>
+				<p>
+					<label for="">内容：</label>
+					<textarea name="content" cols="80" id="content"></textarea>
+				</p>
+					<p id="submit-line">
+					<input type="submit" value="提交" id="submit">
+					<input type="button" value="取消" onclick="javascript:history.go(-1);">
+				</p>
+			</form>
+		</div>
+
+		<div  class="foot">
+	       <p>design by: 铭业</p>	
+	    </div>
+	</div>
+
+<script src="js/modifyArticle.js"> </script>
+<script>
+	function checkForm(){
+		if($('#title').val() == ''){ $('#tip').html("请输入标题"); return false }
+		else{return true};
+
+		if($('#author').val() == ''){ $('#tip').html("请输入作者"); return false }
+		else{return true};
+
+		if($('#type').val() == ''){ $('#tip').html("请输入文章类型"); return false }
+		else{return true};
+
+		if($('#content').val() == ''){ $('#tip').html("请输入文章"); return false }
+		else{return true};
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!-- 留言板 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>O叶的博客</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<script src="js/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/top.css">
+	<link rel="stylesheet" href="css/side.css">
+	
+	<link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+    <!-- container 最外层容器 -->
+	<div class="container">
+
+	   <!-- top 顶部  -->
+	    <div class="row top">
+
+	        <!-- top-logo -->
+	    	<div class="row top-logo">
+	    		<div class="col-md-7 top-logo-left">
+	    		    <span class="logo-name1">O叶</span>
+	    		    <span class="logo-name2">--个人博客</span>
+	    		</div>
+	    		<div class="col-md-5 top-logo-right">
+	    		    <div class="content">
+	    		    	<p class="saying">不忘初心,方得始终</p> 
+	    		    	<p class="author">by:<strong>O叶</strong></p>
+	    		    </div>
+	    			<img src="img/logo.jpg" alt="">
+	    		</div>
+	    	</div>
+	    	<!-- top-nav 导航 -->
+	    	<div class="row top-nav">
+	    		<ul class="clearfix">
+	    			<li><a href="index.html">首页</a></li>
+	    			<li><a href="article.html">文章归档</a></li>
+	    			<li><a href="diary.html">个人随笔</a></li>
+	    			<li><a href="about.html">关于自己</a></li>
+	    			<li><a href="board.html">留言板</a></li>
+	    		</ul>
+	    	</div>
+	    </div> <!-- top 顶部  结束 -->
+
+        <!-- main 主内容  -->
+	    <div class="row main clearfix">
+
+	        <!-- main-content 内容 -->
+	    	<div class="col-md-8 main-content f-left" id="main-content">
+
+	    		<!-- 发表留言 -->
+	    	    <div class="row publish">
+	    	    	<span id="publish-btn">发表留言</span>
+	    	    	<div class="publish-content" id="publish-content">
+	    	    		<form>
+	    	    			<p id="tip"> </p> <!-- 提示 -->
+	    	    			<p>
+	    	    				<label for="">姓名：</label>
+	    	    				<input type="text" placeholder="rmy" id="name">
+	    	    			</p>
+	    	    			<p>
+	    	    				<label for="">内容：</label>
+	    	    				<textarea id="content" placeholder="来说两句吧..."></textarea>
+	    	    			</p>
+	    	    			<p>
+	    	    				<label for=""></label>
+	    	    				<input type="button" value="提交留言" id="submit">
+	    	    				<input type="button" value="取消" id="publish-cancel">
+	    	    			</p>
+	    	    		</form>
+	    	    	</div>
+	    	    </div>  <!-- 发表留言结束 -->
+
+	    	    <!-- 评论 -->
+	    	    <div class="row comment">
+	    	    	<div class="title"><span>评论</span></div>
+	    	    	<h3>最新评论</h3>
+	    	    	<div id="new-comment">
+	    	    		<!--
+		    	    	<div class="comment-one clearfix">
+		    	    		<div class="f-left one-left"><img src="img/logo.jpg" alt="">
+		    	    		</div>
+		    	    		<div class="f-right one-right">
+		    	    			<div class="one-right-top clearfix">
+		    	    				<span class="issuer">{rmy}</span>
+		    	    				<span class="publish-time f-right">{time}</span>
+		    	    			</div>
+
+		    	    			<div class="one-right-content">
+			    	    				{content}
+			    	    		</div>
+			    	    		<div class="one-right-footer">
+			    	    				<span>回复</span>
+			    	    				<span>赞</span>
+			    	    				<span>不咋滴</span>
+			    	    			</div>
+			    	    		</div>
+
+			    	    	</div>
+			    	    	<div class="show-reply"></div>
+
+			    	    	<div class="reply"></div>
+		    	    	</div>
+		    	    	-->
+	    	    	</div>
+	    	    </div> <!-- 评论区结束 -->
+
+	    	</div> <!-- main-content 内容结束 -->
+
+           <!-- main-side 侧边 -->
+	    	<div class="col-md-3 main-side f-right">
+           		<div class="row side-tip">
+           			<img src="img/tou.jpg" alt="" class="f-left">
+           			<div class="f-right">
+           			  <p><span class="bold">博主：</span>铭业</p>
+           			  <p>是一个记录生活点滴、文章浅谈的博客</p>
+           			</div>
+           		</div>
+
+	    		<div class="row side-article-type">
+	    		    <h3>文章分类:</h3>
+	    			<ul id="side-list">
+	    			  <!--
+	    			 		<li><a href='http://192.168.1.183:4001/index.html?
+	    			 			type="item.type+"'><strong></strong><span class='type-num'>1</span></a>
+							</li> 
+						-->
+	    			</ul>
+	    		</div>
+	    	</div><!-- main-side 侧边结束 -->
+
+	    </div>  <!-- main主内容结束 -->
+        
+        <!-- foot脚部 -->
+	    <div  class="foot">
+	       <p>design by: 铭业</p>	
+	    </div>
+
+	</div>  <!-- container 结束 -->
+
+	<script src="js/same.js"></script>
+	<script src="js/board.js"></script>
+	<script src="js/side.js"></script>
+</body>
+</html>

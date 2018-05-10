@@ -1,0 +1,119 @@
+*{padding: 0; margin: 0;}
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+}
+.f-left{ float: left; }
+.f-right{ float: right; }
+.clearfix{ zoom: 1; }
+.clearfix:after{
+	clear: both;
+	display: block; 
+	height: 0;
+	line-height: 0;
+	content: '';
+    visibility: hidden;
+}
+
+ul, li{list-style: none;}
+a{color: #000; text-decoration: none;}
+a:hover{ color: #f60;}
+
+
+body{
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 70%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*头部*/
+.top{
+	position: relative;
+	width: 100%;
+	height: 100px;
+
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px;
+	background-color: #f90;
+}
+.top .public{
+	position: absolute;
+	right: 50px;
+	bottom: 10px;
+}
+.top .public li{
+	float: left;
+	padding: 0 10px;
+}
+
+/*主内容*/
+.main{
+	width: 100%;
+	height: 550px;
+}
+.main form{
+	width: 100%;
+	margin: 0 auto;
+/*	border: 1px solid #999;*/
+}
+.main p{
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.main p label{
+	display: inline-block;
+	width: 15%;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+}
+.main p input{
+	width: 50%;
+	height: 30px;
+	padding-left: 10px;
+}
+.main #tip{
+	text-align: center;
+	color: #f00;
+}
+.main #content{
+	vertical-align: top;
+	padding-left: 10px;
+	height: 240px;
+	overflow: auto;
+}
+.main #submit-line{
+	padding: 0;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#submit-line input{
+	width: 80px;
+	height: 30px;
+	text-align: center;	
+
+	margin-left: 10px;
+	padding-left: 0;
+}
+
+
+
+/*脚步*/
+.foot{
+	width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    border: 1px solid #999;
+    border-radius: 10px;
+
+    background-color: #66cdcc;
+    text-align: center;
+}
