@@ -1,8 +1,11 @@
+// 项目创建时间 2018/01/15
+
 var express = require('express'); // 快速构建服务器
 var app = express();
+let query = require('./serve/mysql.js');
 
-var routes = require('./routes.js');
-var routesAdmin = require('./routesAdmin.js');
+var routes = require('./serve/routes.js');
+var routesAdmin = require('./serve/routesAdmin.js');
 routes(app);  // 路由到另一个页面
 routesAdmin(app);
 
@@ -30,7 +33,7 @@ setInterval(function(){
 }, 1000*60*60*7);
 
 
-var server = app.listen(8080, '0.0.0.0', function(){
+var server = app.listen(80, '0.0.0.0', function(){
 	var host = server.address().address;
 	var port = server.address().port;
 

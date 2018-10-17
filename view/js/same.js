@@ -7,7 +7,7 @@ $(function(){
 		urlString = urlString.toString();
 
 		var navLi = $(".top-nav li");
-		if(urlString == "index"){ navLi.eq(0).addClass("liActive").siblings().remove("liActive"); }
+		if(urlString == "index"|| urlString==""){ navLi.eq(0).addClass("liActive").siblings().remove("liActive"); }
 		else if(urlString == "article"){ navLi.eq(1).addClass("liActive").siblings().remove("liActive");}
 		else if(urlString == "diary"){ navLi.eq(2).addClass("liActive").siblings().remove("liActive");}
 		else if(urlString == "about"){ navLi.eq(3).addClass("liActive").siblings().remove("liActive");}
